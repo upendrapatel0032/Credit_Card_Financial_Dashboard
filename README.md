@@ -1,10 +1,10 @@
 💳 Credit Card Financial Dashboard | Power BI & SQL
+👋 About This Project
 
-📌 Project Overview
+This project demonstrates my ability to convert raw financial data into meaningful business insights using SQL and Power BI.
+It is an end-to-end analytics project, covering data ingestion, modeling, analysis, and visualization — exactly how real-world BI teams work.
 
-The Credit Card Financial Dashboard is a Power BI project designed to provide weekly and year-to-date insights into credit card operations. The dashboard enables stakeholders to track revenue, transactions, customer behavior, and risk metrics using data stored in a SQL database.
-
-This project demonstrates end-to-end data analytics skills, including data ingestion, SQL database management, DAX calculations, and interactive data visualization.
+The dashboard helps stakeholders monitor weekly performance, revenue growth, customer behavior, and risk metrics in a clear and interactive way.
 
 ---
 # Some SnapShot 
@@ -15,128 +15,60 @@ This project demonstrates end-to-end data analytics skills, including data inges
 
 ---
 
-## 🎯 Project Objective
+## 🎯 Business Problem
 
-To develop a comprehensive weekly credit card dashboard that delivers:
+Credit card teams need fast and accurate insights to track:
 
-Real-time monitoring of key performance metrics
+Revenue and transaction trends
 
-Trend analysis across customers, revenue, and transactions
+Customer growth and segmentation
 
-Actionable insights for data-driven decision-making
+Card performance and regional contribution
 
----
-## 🛠️ Tech Stack
+Risk indicators such as delinquency and activation rate
 
-Database: PostgreSQL / SQL
-
-Data Visualization: Power BI
-
-Query Language: SQL
-
-Analytics Language: DAX
-
-Data Source: CSV files
+This dashboard solves that by providing a single source of truth for weekly and YTD performance.
 
 ---
+## 🛠️ Skills Demonstrated
 
-## 📂 Dataset Description
+SQL: Data modeling, table creation, CSV ingestion
 
-The project uses two primary datasets:
+Power BI: Interactive dashboards, KPI cards, slicers
 
-Customer Details (cust_detail)
+DAX: Custom measures, time-based calculations, segmentation
 
-Credit Card Transaction Details (cc_detail)
+Data Analysis: Trend analysis, business insights, storytelling
 
-These datasets include information such as customer demographics, income, card type, transaction amount, interest earned, and weekly activity.
+Business Thinking: Translating numbers into decisions
+---
+
+## 🔄 End-to-End Workflow
+
+1- Prepared & cleaned CSV data
+
+2- Created relational tables in SQL
+
+3- Imported data into SQL database
+
+4- Connected SQL to Power BI
+
+5- Built DAX measures for weekly & YTD metrics
+
+6- Designed an executive-friendly dashboard
+
+7- Generated actionable business insights
 
 ---
 
-## 🔄 Data Pipeline
-1. Prepare CSV Files
+## 📊 Key Insights Delivered
+📈 Performance (Week 53 – 31st Dec)
 
-Cleaned and structured raw customer and transaction data
+Revenue increased by 28.8% WoW
 
-Ensured correct date formats and column naming
----
+Growth in both transaction value and customer count
 
-2. Create SQL Tables
-
-Designed relational tables for customer and credit card details
-
-Applied appropriate data types and constraints
----
-
-3. Import Data into SQL
-
-Used COPY command to load CSV data into PostgreSQL
-
-Validated data integrity after import
----
-
-## 📐 DAX Calculations
-🔹 Customer Segmentation
-
-Age Group
-AgeGroup = SWITCH(
- TRUE(),
- 'public cust_detail'[customer_age] < 30, "20-30",
- 'public cust_detail'[customer_age] >= 30 && 'public cust_detail'[customer_age] < 40, "30-40",
- 'public cust_detail'[customer_age] >= 40 && 'public cust_detail'[customer_age] < 50, "40-50",
- 'public cust_detail'[customer_age] >= 50 && 'public cust_detail'[customer_age] < 60, "50-60",
- 'public cust_detail'[customer_age] >= 60, "60+",
- "Unknown"
-)
-
-
-Income Group
-IncomeGroup = SWITCH(
- TRUE(),
- 'public cust_detail'[income] < 35000, "Low",
- 'public cust_detail'[income] >= 35000 && 'public cust_detail'[income] < 70000, "Medium",
- 'public cust_detail'[income] >= 70000, "High",
- "Unknown"
-)
----
-
-## 🔹 Revenue & Weekly Metrics
-Week_Num = WEEKNUM('public cc_detail'[week_start_date])
-
-Revenue = 
-'public cc_detail'[annual_fees] + 
-'public cc_detail'[total_trans_amt] + 
-'public cc_detail'[interest_earned]
-
-Current_Week_Revenue = 
-CALCULATE(
- SUM('public cc_detail'[Revenue]),
- FILTER(
-  ALL('public cc_detail'),
-  'public cc_detail'[Week_Num] = MAX('public cc_detail'[Week_Num])
- )
-)
-
-Previous_Week_Revenue = 
-CALCULATE(
- SUM('public cc_detail'[Revenue]),
- FILTER(
-  ALL('public cc_detail'),
-  'public cc_detail'[Week_Num] = MAX('public cc_detail'[Week_Num]) - 1
- )
-)
----
-
-## 📊 Key Insights (Week 53 – 31st Dec)
-📈 Week-over-Week Change
-
-Revenue increased by 28.8%
-
-Total transaction amount & count showed significant growth
-
-Customer count increased compared to the previous week
----
-
-## 📅 Year-to-Date Overview
+📅 Year-to-Date Highlights
 
 Total Revenue: 57M
 
@@ -144,35 +76,48 @@ Total Interest Earned: 8M
 
 Total Transaction Amount: 46M
 
-Male Customers: 31M revenue
+Top States (TX, NY, CA): 68% contribution
 
-Female Customers: 26M revenue
+Blue & Silver Cards: 93% of all transactions
 
-Blue & Silver Cards: 93% of total transactions
+👥 Customer & Risk Analysis
 
-Top States (TX, NY, CA): 68% of total contribution
+Male customers contributed 31M, female 26M
+
+Activation Rate: 57.5%
+
+Delinquent Rate: 6.06%
+
+These insights help leadership optimize card strategy, target customers, and manage risk.
+
 ---
 
+## 📐 Analytical Logic (DAX Highlights)
 
-## ⚠️ Risk & Activation Metrics
+Customer segmentation by Age Group & Income Group
 
-Overall Activation Rate: 57.5%
+Weekly revenue comparison (current vs previous week)
 
-Overall Delinquent Rate: 6.06%
+YTD performance tracking
+
+Card type and state-level contribution analysis
+
 ---
 
-## 📌 Dashboard Features
+## 📌 Why This Project Matters
 
-Weekly & YTD performance tracking
+This project reflects my ability to:
 
-Customer segmentation by age, income, gender, and region
+Work with realistic financial datasets
 
-Revenue and transaction trend analysis
+Build scalable BI solutions
 
-Card-type and state-wise contribution analysis
+Communicate insights clearly to non-technical stakeholders
 
-Risk metrics (activation & delinquency rates)
+Think like a business-focused data analyst
+
 ---
+
 
 ## 🚀 Future Enhancements
 
@@ -181,5 +126,6 @@ Automate data refresh using scheduled pipelines
 Add predictive analysis for delinquency risk
 
 Include monthly and quarterly trend comparisons
+
 ---
 
