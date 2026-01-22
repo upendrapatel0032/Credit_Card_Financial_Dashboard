@@ -8,9 +8,10 @@ This project demonstrates end-to-end data analytics skills, including data inges
 
 ---
 # Some SnapShot 
+<img width="633" height="365" alt="{4F6774F6-0D27-4AD4-BBDE-A1CC0ABB7212}" src="https://github.com/user-attachments/assets/e37c93d4-4a8c-454b-8986-da4f30638fbe" />
+---
+<img width="622" height="364" alt="{985A0815-F5E2-4968-A53A-1A83F0201311}" src="https://github.com/user-attachments/assets/5dc31a35-9964-48eb-bac8-bbe16f987af3" />
 
-<img width="576" height="333" alt="{597E3112-4CE3-4310-9AF4-68A1BB013026}" src="https://github.com/user-attachments/assets/2d565026-9e52-420e-972a-f6906844d506" />
-<img width="570" height="333" alt="{81C8E1ED-727E-4A10-954E-566075DB79C2}" src="https://github.com/user-attachments/assets/904129ef-9a38-48ec-9a2b-f8c0f530066e" />
 
 ---
 
