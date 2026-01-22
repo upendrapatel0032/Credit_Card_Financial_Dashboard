@@ -1,4 +1,5 @@
 💳 Credit Card Financial Dashboard | Power BI & SQL
+
 👋 About This Project
 
 This project demonstrates my ability to convert raw financial data into meaningful business insights using SQL and Power BI.
